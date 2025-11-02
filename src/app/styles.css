@@ -1,0 +1,120 @@
+/* From Uiverse.io by Mr-Roy-alt */
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+.box{
+    display: flex;
+    justify-content: center;  
+    align-items: center;   
+    height: 100vh;
+    }
+.container {
+    font-family: "Dosis", sans-serif;
+    min-width: 500px;
+    padding: 3.125em;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px -1px rgba(0, 0, 0, 0.24);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.list{
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+.list--element{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+.todo--desc{
+    width: 70%;
+}
+.flex--row {
+    margin: 20px 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+.flex--row--title{
+    flex-direction: column;
+    width: 100%;
+    color: rgb(77, 75, 75);
+}
+.flex--row--title hr{
+    width: 100%;
+}
+.check--task{
+    width: 80%;
+}
+.form > div:nth-of-type{
+    justify-content: space-between;
+}
+.form--input--checkbox{
+    transform: scale(1.5);
+    margin-right: 1.5rem;
+}
+.form--input {
+    flex: 1; /* hace que el input crezca y ocupe el espacio disponible */
+    padding: 0.5rem;
+    width: 80%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    outline: none;
+}
+
+.form--input:focus {
+    border: 1px solid #639;
+    outline: none;
+}
+
+.form--submit {
+    height: 40px;
+    width: 20%;
+    padding: 0.625em;
+    border-radius: 5px;
+    color: white;
+    background-color: #639;
+    border: 1px dashed #639;
+    cursor: pointer;
+}
+
+.form--submit:hover {
+    color: #639;
+    background-color: white;
+    border: 1px dashed #639;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+
+.signup {
+    color: rgb(77, 75, 75);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    font-weight: bold;
+    font-size: x-large;
+    margin-bottom: 0.5em;
+}
+
+.checkbox,
+input[type="checkbox"] {
+    accent-color: #639;
+}
+
+.todo--desc:hover{
+    font-weight: bolder;
+    color: rgb(79, 5, 148);
+}
