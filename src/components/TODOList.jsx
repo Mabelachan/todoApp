@@ -1,3 +1,4 @@
+import { FiTrash } from "react-icons/fi";
 
 function TODOList({ todos, setTodos }){
     
@@ -41,11 +42,16 @@ function Item({ item, setTodos }){
                 className='todo--desc' 
                 htmlFor={ checkboxId }
                 style={ item.is_completed ? { textDecoration: 'line-through'} : {}}
-            >{ item?.title }</label>
-            <button 
-                className='form--submit'
-                onClick={ handleDelete }
-            >Eliminar</button>
+            >{ item?.title }
+
+             <span className={`pill category-pill ${item.category.toLowerCase()}`}>{item.category}</span>
+
+            </label>
+            <div className='delete--container'>
+                <button className='delete'onClick={ handleDelete }>
+                    <FiTrash />
+                </button>
+            </div>
         </li>
     )
 }

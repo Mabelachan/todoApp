@@ -1,14 +1,19 @@
 /* From Uiverse.io by Mr-Roy-alt */
-*, *::before, *::after{
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
-
-.box{
+body{
+    margin: 0;
+}
+.box {
     display: flex;
-    justify-content: center;  
-    align-items: center;   
+    justify-content: center;
+    align-items: center;
     height: 100vh;
-    }
+}
+
 .container {
     font-family: "Dosis", sans-serif;
     min-width: 500px;
@@ -19,24 +24,38 @@
     flex-direction: column;
     align-items: center;
 }
+
 .form {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.list{
+
+.list {
     list-style: none;
     padding: 0;
     width: 100%;
 }
-.list--element{
+
+.list--element {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin: 10px 0;
 }
-.todo--desc{
+.tasks--header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.todo--desc {
     width: 70%;
+}
+hr{
+    width: 100%;
+    border: solid 1px rgb(179, 179, 179);
 }
 .flex--row {
     margin: 20px 0px;
@@ -46,24 +65,31 @@
     align-items: center;
     gap: 0.5rem;
 }
-.flex--row--title{
+.select-box{
+    width: 20%;
+}
+.pills--select{
+    display: flex;
+    width: 100%;
+}
+
+.flex--row--title {
     flex-direction: column;
-    width: 100%;
-    color: rgb(77, 75, 75);
+  
 }
-.flex--row--title hr{
-    width: 100%;
-}
-.check--task{
+
+.check--task {
     width: 80%;
 }
-.form > div:nth-of-type{
+
+.form>div:nth-of-type {
     justify-content: space-between;
 }
-.form--input--checkbox{
+
+.form--input--checkbox {
     transform: scale(1.5);
-    margin-right: 1.5rem;
 }
+
 .form--input {
     flex: 1; /* hace que el input crezca y ocupe el espacio disponible */
     padding: 0.5rem;
@@ -76,7 +102,9 @@
 
 .form--input:focus {
     border: 1px solid #639;
+    box-shadow: 0 0 4px rgba(136, 0, 255, 0.4);
     outline: none;
+    transition: 0.2s;
 }
 
 .form--submit {
@@ -98,6 +126,51 @@
     transition: 0.5s;
 }
 
+.delete--container {
+    display: flex;
+}
+
+.delete {
+    height: 40px;
+    padding: 1em;
+    border-radius: 5px;
+    color: #639;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.delete:hover {
+    color: white;
+    background-color: #639;
+    border: none;
+    transition: 0.5s;
+}
+
+.categories {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.pill {
+    padding: 6px 12px;
+    border-radius: 9999px;
+    background-color: #e5e7eb;
+    color: #808080;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s;
+}
+
+.pills--row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+}
 
 .signup {
     color: rgb(77, 75, 75);
@@ -114,7 +187,68 @@ input[type="checkbox"] {
     accent-color: #639;
 }
 
-.todo--desc:hover{
+.todo--desc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+.todo--desc:hover {
     font-weight: bolder;
     color: rgb(79, 5, 148);
+    cursor: pointer;
+}
+
+.estudio,
+[data-type='estudio']:hover {
+    background-color: #e1ffdb;
+
+}
+
+.trabajo,
+[data-type='trabajo']:hover {
+    background-color: #dae7fd;
+}
+
+.casa,
+[data-type='casa']:hover {
+    background-color: #faefdb;
+}
+
+.otros,
+[data-type='otros']:hover {
+    background-color: #faffde;
+}
+
+.select--categorias:focus,
+.select--categorias:focus-visible{
+    outline: none;
+    border-color: inherit;
+    box-shadow: none;
+}
+.select--categorias:focus {
+  border-color: #639;           /* Color al enfocar */
+  box-shadow: 0 0 4px rgba(136, 0, 255, 0.4);
+}
+.select--categorias:hover{
+    cursor: pointer;
+}
+
+/* Animación de sacudida */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px); }
+  40%, 80% { transform: translateX(8px); }
+}
+
+.shake {
+  animation: shake 0.4s ease;
+}
+
+.shake .pill {
+  border-color: #c90104 !important;
+  background-color: #ffa9a9ab ;
+  color: rgb(91, 43, 43) !important;
+  transition: all 0.4s ease;
 }
